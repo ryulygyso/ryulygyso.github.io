@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="会员制餐厅原视频在线观看平台，提供日式、中式会员制餐厅原视频及探店体验分享，高清画质，沉浸式餐饮视频内容。">
+    <meta name="keywords" content="会员制餐厅原视频,探店视频,日式会席料理,会员制餐厅,沉浸式美食">
+    <title>会员制餐厅原视频-沉浸式探店与高端餐饮体验分享</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .header-actions button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/restaurant/1600/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 24px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .category-item:hover {
+            background-color: #fff3e0;
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .category-name {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Video Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin: 40px 0 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .more-link {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .views {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: #fff3e0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f1f3f5;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 12px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            background-color: #fafafa;
+            color: var(--text-sub);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <span>食探视界</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">日式会席</a></li>
+                <li><a href="#">中式私房</a></li>
+                <li><a href="#">高端会所</a></li>
+                <li><a href="#">社区</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button>登录 / 注册</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>会员制餐厅原视频</h1>
+            <p>深入探索那些只对会员开放的高端餐饮空间。高清原视频记录每一道工序，还原真实的用餐体验与美食细节。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索餐厅类型、菜品或地域...">
+                <button>搜索视频</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-list">
+                <div class="category-item">
+                    <div class="category-icon">🍣</div>
+                    <span class="category-name">日式会席</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🥟</div>
+                    <span class="category-name">中式私房</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🥂</div>
+                    <span class="category-name">高端会所</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🥩</div>
+                    <span class="category-name">牛排馆</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🍷</div>
+                    <span class="category-name">酒窖餐厅</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Videos -->
+    <section class="container">
+        <div class="section-title">
+            <h2>热门会员制餐厅原视频</h2>
+            <a href="#" class="more-link">查看全部 ></a>
+        </div>
+        <div class="video-grid">
+            <!-- Video Card 1 -->
+            <article class="video-card">
+                <div class="thumbnail">
+                    <img src="https://picsum.photos/seed/restaurant1/400/225" alt="东京高级会席料理制作过程">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <span class="duration">12:45</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="video-title">东京银座隐藏版会员制会席料理：从食材挑选到上菜全过程</h3>
+                    <div class="video-info">
+                        <span class="views">👁 12.5万</span>
+                        <span>2天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 2 -->
+            <article class="video-card">
+                <div class="thumbnail">
+                    <img src="https://picsum.photos/seed/restaurant2/400/225" alt="上海顶级私房菜探访">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <span class="duration">08:30</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="video-title">上海顶级私房菜探访：环境、菜品与隐秘的菜单</h3>
+                    <div class="video-info">
+                        <span class="views">8.2万</span>
+                        <span>1周前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 3 -->
+            <article class="video-card">
+                <div class="thumbnail">
+                    <img src="https://picsum.photos/seed/restaurant3/400/225" alt="会员制餐厅排队攻略">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <span class="duration">15:20</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="video-title">如何获得顶级餐厅的会员资格？揭秘餐厅筛选机制</h3>
+                    <div class="video-info">
+                        <span class="views">5.1万</span>
+                        <span>3天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Video Card 4 -->
+            <article class="video-card">
+                <div class="thumbnail">
+                    <img src="https://picsum.photos/seed/restaurant4/400/225" alt="沉浸式用餐体验">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <span class="duration">20:10</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="video-title">沉浸式4K原视频：在深山会所享用全日式晚餐</h3>
+                    <div class="video-info">
+                        <span class="views">18.9万</span>
+                        <span>5小时前</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎬</div>
+                    <h3>高清原视频</h3>
+                    <p>提供4K及超高清画质的原视频流，捕捉食物的纹理与餐厅的细节。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>真实探店</h3>
+                    <p>由资深美食博主实地探访，记录真实的排队、入座与用餐体验。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💡</div>
+                    <h3>实用指南</h3>
+                    <p>包含详细的菜单解析、着装要求及预订建议，帮助用户更好地规划行程。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container faq-container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">会员制餐厅原视频在哪里可以观看？</div>
+                <div class="faq-answer">
+                    <p>您可以在本站浏览最新的会员制餐厅探店原视频。所有视频均经过审核，确保画质清晰且内容合规。部分深度内容可能需要会员权限。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何判断一家餐厅是否属于会员制餐厅？</div>
+                <div class="faq-answer">
+                    <p>会员制餐厅通常具有以下特征：需要预约、限制入座人数、不对外张贴菜单、且对顾客身份有一定筛选。本站视频会详细展示这些特征。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">视频中的餐厅地址和联系方式准确吗？</div>
+                <div class="faq-answer">
+                    <p>我们尽量提供准确的地址信息，但餐厅地址、营业时间及会员政策可能会有变动。建议您在前往前通过视频中的线索或官方网站进行二次确认。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">合作招募</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>视频分类</h4>
+                <ul>
+                    <li><a href="#">日式料理</a></li>
+                    <li><a href="#">法式大餐</a></li>
+                    <li><a href="#">中式私房</a></li>
+                    <li><a href="#">西式牛排</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>探索更多</h4>
+                <ul>
+                    <li><a href="#">美食博客</a></li>
+                    <li><a href="#">餐厅地图</a></li>
+                    <li><a href="#">厨师访谈</a></li>
+                    <li><a href="#">食谱分享</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱：contact@foodvideo.com</li>
+                    <li>客服热线：400-123-4567</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 食探视界. 保留所有权利. 本网站仅提供会员制餐厅原视频分享，不涉及实际餐饮业务。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+  </html>
