@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="浑身是胆雄赳赳伴奏下载，提供高音质MP3伴奏、纯音乐及演唱版本资源，适合KTV、舞台表演、卡拉OK使用。">
+    <meta name="keywords" content="浑身是胆雄赳赳伴奏,浑身是胆雄赳赳,伴奏下载,纯音乐,MP3">
+    <title>浑身是胆雄赳赳伴奏-高品质伴奏资源与下载指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* 激情红 */
+            --secondary-color: #f5f5f5;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            height: var(--header-height);
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #2c0e0e;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Resource List / Cards */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            height: 160px;
+            background-color: #eee;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 48px;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #b71c1c;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #fafafa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: #ffebee;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        /* Instructions / Steps */
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .step-num {
+            font-size: 32px;
+            font-weight: 800;
+            color: #eee;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .step h4 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>🎵</span> 伴奏云
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#resources">伴奏资源</a>
+                <a href="#guide">使用指南</a>
+                <a href="#about">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>浑身是胆雄赳赳伴奏</h1>
+                <p>寻找《浑身是胆雄赳赳》的高清伴奏？我们提供专业级MP3下载，适合KTV演唱、舞台表演及音乐制作。</p>
+                <form class="search-box" onsubmit="event.preventDefault(); alert('搜索功能演示：请搜索您需要的版本。');">
+                    <input type="text" placeholder="搜索歌曲名、歌手或风格..." aria-label="搜索伴奏">
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="icon-box">♫</div>
+                        <h3>高音质伴奏</h3>
+                        <p>提供320kbps高品质MP3及WAV无损格式，还原真实音效。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">⚡</div>
+                        <h3>极速下载</h3>
+                        <p>无需注册，一键直连，秒速获取您需要的伴奏文件。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">🔒</div>
+                        <h3>安全可靠</h3>
+                        <p>资源经过人工审核，确保无病毒、无水印，安全无忧。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <h2 class="section-title">热门伴奏资源</h2>
+                
+                <div class="resource-grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-img">
+                            🎤
+                            <span class="card-badge">推荐</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">浑身是胆雄赳赳 (原版伴奏)</h3>
+                            <div class="card-meta">
+                                <span>风格: 民歌/戏曲</span>
+                                <span>时长: 04:35</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="alert('开始下载：原版伴奏.mp3')">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                                    下载
+                                </button>
+                                <button class="btn btn-outline" onclick="alert('试听功能：播放浑身是胆雄赳赳伴奏')">试听</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-img">
+                            🎻
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">浑身是胆雄赳赳 (纯音乐版)</h3>
+                            <div class="card-meta">
+                                <span>风格: 纯音乐</span>
+                                <span>时长: 04:35</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="alert('开始下载：纯音乐版.mp3')">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                                    下载
+                                </button>
+                                <button class="btn btn-outline" onclick="alert('试听功能：播放纯音乐版')">试听</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-img">
+                            🎹
+                            <span class="card-badge">新</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">浑身是胆雄赳赳 (DJ版)</h3>
+                            <div class="card-meta">
+                                <span>风格: 舞曲/DJ</span>
+                                <span>时长: 05:12</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="alert('开始下载：DJ版.mp3')">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                                    下载
+                                </button>
+                                <button class="btn btn-outline" onclick="alert('试听功能：播放DJ版')">试听</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section" style="background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title">如何使用伴奏</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">01</div>
+                        <h4>选择版本</h4>
+                        <p>根据您的演唱需求，在上方列表中选择原版伴奏、纯音乐版或DJ舞曲版。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">02</div>
+                        <h4>试听确认</h4>
+                        <p>点击“试听”按钮预览音频，检查音调是否合适，伴奏是否清晰。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">03</div>
+                        <h4>下载保存</h4>
+                        <p>点击“下载”按钮保存MP3文件到本地，即可在电脑或手机上播放使用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于伴奏云</h4>
+                    <p>我们致力于为用户提供最优质、最便捷的伴奏资源下载服务。收录海量歌曲伴奏，满足K歌、舞台、音乐制作等多场景需求。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">热门排行</a></li>
+                        <li><a href="#">最新上传</a></li>
+                        <li><a href="#">分类浏览</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持我们</h4>
+                    <ul>
+                        <li><a href="#">提交资源</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 伴奏云资源站 版权所有 | 本站资源仅供个人学习与交流使用，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
