@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小明发布-个人品牌展示与内容创作中心</title>
+    <meta name="description" content="小明发布是一个专注于个人品牌展示与优质内容创作的在线平台。在这里，您可以浏览最新发布的创意作品、探索多元化的内容领域，并了解小明及其团队的服务理念与作品案例。">
+    <meta name="keywords" content="小明发布, 个人品牌, 内容创作, 创意展示, 设计作品, 媒体服务">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #eff6ff;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Latest Works / Showcase */
+        .showcase {
+            padding: 4rem 0;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s;
+        }
+
+        .work-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-image {
+            height: 200px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 3rem;
+        }
+
+        .work-content {
+            padding: 1.5rem;
+        }
+
+        .work-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .work-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .work-link::after {
+            content: '→';
+            margin-left: 0.25rem;
+            transition: margin-left 0.2s;
+        }
+
+        .work-link:hover::after {
+            margin-left: 0.5rem;
+        }
+
+        /* About / Services Section */
+        .services {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .services-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .service-list-icon {
+            color: var(--primary-color);
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .services-image {
+            background-color: #e2e8f0;
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #f1f5f9;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            nav ul {
+                display: none; /* In a real app, this would be a slide-out menu */
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <span>小明发布</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#works">精选作品</a></li>
+                    <li><a href="#services">服务内容</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>发现创意，<br><span>发布精彩</span>内容</h1>
+                <p>小明发布致力于为创作者和品牌提供一站式的内容展示与传播解决方案。这里有最新的设计趋势、深度文章以及实用的创作指南。</p>
+                <div class="hero-actions">
+                    <a href="#works" class="btn btn-primary">浏览作品</a>
+                    <a href="#services" class="btn btn-outline">了解服务</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">🎨</span>
+                        <h3>视觉设计</h3>
+                        <p>提供专业的品牌视觉识别系统（VI）设计、UI界面设计及平面广告创意服务。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">✍️</span>
+                        <h3>内容策划</h3>
+                        <p>从文案撰写到全案策划，帮助品牌构建有深度、有温度的内容体系。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🌐</span>
+                        <h3>数字营销</h3>
+                        <p>整合社交媒体运营、SEO优化及数据分析，助力内容精准触达目标受众。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🚀</span>
+                        <h3>快速响应</h3>
+                        <p>高效的执行团队，确保项目按时交付，提供全生命周期的技术支持。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Section -->
+        <section id="works" class="showcase">
+            <div class="container">
+                <h2 class="section-title">最新发布</h2>
+                <p class="section-subtitle">近期精选的项目案例与创意展示，记录每一个灵感瞬间。</p>
+                
+                <div class="showcase-grid">
+                    <!-- Case 1 -->
+                    <article class="work-card">
+                        <div class="work-image">🖼️</div>
+                        <div class="work-content">
+                            <span class="work-category">品牌设计</span>
+                            <h3 class="work-title">蓝海科技品牌升级</h3>
+                            <p class="work-desc">为一家初创科技公司打造的全新品牌视觉形象，强调未来感与科技感。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <!-- Case 2 -->
+                    <article class="work-card">
+                        <div class="work-image">📱</div>
+                        <div class="work-content">
+                            <span class="work-category">UI/UX</span>
+                            <h3 class="work-title">智行出行APP界面</h3>
+                            <p class="work-desc">专注于用户体验的出行应用界面设计，优化了导航流程与交互逻辑。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <!-- Case 3 -->
+                    <article class="work-card">
+                        <div class="work-image">📰</div>
+                        <div class="work-content">
+                            <span class="work-category">内容营销</span>
+                            <h3 class="work-title">生活方式专栏</h3>
+                            <p class="work-desc">为知名生活方式品牌策划的季度内容专题，涵盖家居、美食与旅行。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <!-- Case 4 -->
+                    <article class="work-card">
+                        <div class="work-image">🎥</div>
+                        <div class="work-content">
+                            <span class="work-category">视频制作</span>
+                            <h3 class="work-title">城市宣传片制作</h3>
+                            <p class="work-desc">运用航拍与延时摄影技术，记录城市发展的日与夜，展现城市活力。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="btn btn-outline">查看更多案例</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="services-container">
+                    <div class="services-image">
+                        <!-- Placeholder for an image representing team or workspace -->
+                        <span style="font-size: 3rem; opacity: 0.5;">🛠️</span>
+                    </div>
+                    <div class="services-content">
+                        <h2>为什么选择小明发布？</h2>
+                        <p>我们不仅仅是服务的提供者，更是您创意旅程的合作伙伴。通过整合创意设计与数字技术，我们帮助客户在竞争激烈的市场中脱颖而出。</p>
+                        
+                        <ul class="service-list">
+                            <li>
+                                <span class="service-list-icon">✓</span>
+                                <div>
+                                    <strong>专业团队</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-light);">拥有多年行业经验的设计师与策划师。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="service-list-icon">✓</span>
+                                <div>
+                                    <strong>定制化方案</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-light);">拒绝模板化，根据您的需求量身定制。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="service-list-icon">✓</span>
+                                <div>
+                                    <strong>透明沟通</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-light);">全流程跟进，确保信息同步与反馈及时。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-subtitle">关于合作流程、服务范围及交付标准的常见疑问解答。</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">如何开始一个项目？</div>
+                        <div class="faq-answer">您可以通过“联系合作”页面填写表单，或直接发送邮件至我们的商务团队，我们会尽快与您取得联系并初步沟通需求。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">项目交付周期通常需要多久？</div>
+                        <div class="faq-answer">这取决于项目的复杂程度。简单的视觉设计可能在3-5个工作日内完成，而完整的品牌全案策划可能需要2-4周。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">是否提供后续维护服务？</div>
+                        <div class="faq-answer">是的，我们提供项目交付后的维护服务，包括设计素材的更新、网站微调及内容迭代支持。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>小明发布</h4>
+                    <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        致力于为创作者与品牌提供高品质的内容展示与传播服务。用创意连接世界，用设计点亮生活。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#works">作品案例</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="mailto:contact@example.com">contact@example.com</a></li>
+                        <li><a href="#">商务合作咨询</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 小明发布 版权所有. 本网站仅供展示使用。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle mobile menu toggle logic if needed
+        // Currently using CSS display:none for simplicity in static page
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navUl = document.querySelector('nav ul');
+            
+            if(mobileBtn && navUl) {
+                mobileBtn.addEventListener('click', () => {
+                    const isHidden = getComputedStyle(navUl).display === 'none';
+                    if(isHidden) {
+                        navUl.style.display = 'flex';
+                        navUl.style.flexDirection = 'column';
+                        navUl.style.position = 'absolute';
+                        navUl.style.top = '70px';
+                        navUl.style.left = '0';
+                        navUl.style.width = '100%';
+                        navUl.style.background = 'white';
+                        navUl.style.padding = '1rem';
+                        navUl.style.borderBottom = '1px solid #e2e8f0';
+                    } else {
+                        navUl.style.display = ''; // Reverts to CSS default
+                        navUl.style.position = '';
+                        navUl.style.top = '';
+                        navUl.style.width = '';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
