@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="调教娜美 - 海贼王娜美角色深度解析与同人创作展示平台，包含角色档案、性格分析、同人作品分类及相关讨论指南。">
+    <meta name="keywords" content="调教娜美,海贼王,娜美,动漫同人,角色分析">
+    <title>调教娜美 - 海贼王娜美同人作品与角色解析指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+            --light-color: #f7f9fc;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: var(--text-sub);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Section */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-text {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff5252;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .category-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-count {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Guidelines Section */
+        .guidelines {
+            background: white;
+            padding: 50px 20px;
+            margin-top: 60px;
+        }
+
+        .guidelines-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guide-item {
+            margin-bottom: 30px;
+        }
+
+        .guide-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .guide-item p {
+            color: var(--text-sub);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: #ccc;
+            padding: 50px 20px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>调教娜美</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu-btn">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">同人作品</a></li>
+                    <li><a href="#">角色档案</a></li>
+                    <li><a href="#">精选图集</a></li>
+                    <li><a href="#">讨论社区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索娜美：角色深度与同人创作</h1>
+            <p>专注于海贼王角色娜美的同人创作、角色分析及二次元文化展示平台。</p>
+            <div class="hero-tags">
+                <span class="tag">航海士</span>
+                <span class="tag">橘子镇</span>
+                <span class="tag">恶魔果实</span>
+                <span class="tag">智慧担当</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Main Content -->
+        <section class="content-area">
+            <h2 class="section-title">热门同人作品推荐</h2>
+
+            <article class="card">
+                <div class="card-header">
+                    <h3 class="card-title">航海日志：橘子镇的秘密</h3>
+                    <span class="card-meta">更新于 2天前</span>
+                </div>
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/nami1/800/400" alt="娜美同人插画">
+                </div>
+                <p class="card-text">本文深入探讨了娜美在橘子镇时期的心理变化与早期经历，结合同人创作视角，展现了她如何从被奴役的少女成长为未来的伟大航路航海士。</p>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">阅读全文</a>
+                    <a href="#" class="btn btn-outline">收藏</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <h3 class="card-title">天气棒与战斗策略分析</h3>
+                    <span class="card-meta">更新于 5天前</span>
+                </div>
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/nami2/800/400" alt="娜美使用天候棒">
+                </div>
+                <p class="card-text">通过同人剧情模拟，分析娜美在面对强敌时如何利用天候棒进行战术布局，以及她对团队信任与依赖的细腻刻画。</p>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">阅读全文</a>
+                    <a href="#" class="btn btn-outline">收藏</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <h3 class="card-title">贝加庞克的科技与娜美</h3>
+                    <span class="card-meta">更新于 1周前</span>
+                </div>
+                <div class="card-img-placeholder">
+                    <img src="https://picsum.photos/seed/nami3/800/400" alt="科技主题娜美">
+                </div>
+                <p class="card-text">结合最新漫画剧情，探讨未来娜美在科技辅助下的能力进化，以及她作为团队智囊在“蛋头岛”篇章中的关键作用。</p>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">阅读全文</a>
+                    <a href="#" class="btn btn-outline">收藏</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">作品分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">日常互动</a><span class="category-count">128</span></li>
+                    <li><a href="#">战斗场景</a><span class="category-count">85</span></li>
+                    <li><a href="#">情感独白</a><span class="category-count">64</span></li>
+                    <li><a href="#">换装展示</a><span class="category-count">210</span></li>
+                    <li><a href="#">特殊剧情</a><span class="category-count">42</span></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门标签</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="tag" style="background: #fff0f0; color: #d63031;">傲娇</span>
+                    <span class="tag" style="background: #fff0f0; color: #d63031;">财宝</span>
+                    <span class="tag" style="background: #fff0f0; color: #d63031;">路飞</span>
+                    <span class="tag" style="background: #fff0f0; color: #d63031;">索隆</span>
+                    <span class="tag" style="background: #fff0f0; color: #d63031;">骗财</span>
+                    <span class="tag" style="background: #fff0f0; color: #d63031;">梅利号</span>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">创作指南</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">欢迎各位创作者投稿，请遵守相关社区规范，尊重原创。</p>
+                <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">提交作品</a>
+            </div>
+        </aside>
+    </main>
+
+    <section class="guidelines">
+        <div class="guidelines-content">
+            <h2 class="section-title">创作与阅读规范</h2>
+            <div class="guide-item">
+                <h3>尊重原著与角色设定</h3>
+                <p>同人作品应基于《海贼王》原著角色性格进行创作，保持娜美作为智慧型航海士的特质，避免过度偏离角色核心逻辑。</p>
+            </div>
+            <div class="guide-item">
+                <h3>内容健康与合规</h3>
+                <p>所有发布的作品必须符合国家法律法规及互联网内容管理规定，禁止包含色情、暴力等违规内容。</p>
+            </div>
+            <div class="guide-item">
+                <h3>版权声明</h3>
+                <p>本站仅提供同人作品展示平台，所有版权属于原作者及《海贼王》版权方。转载请注明出处。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于调教娜美</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    这是一个专注于海贼王角色娜美的同人文化展示平台，致力于为粉丝提供高质量的阅读与交流环境。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新作品</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="#">海贼王中文网</a></li>
+                    <li><a href="#">One Piece Wiki</a></li>
+                    <li><a href="#">同人创作社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 调教娜美同人展示站. All Rights Reserved. 本站内容仅供交流学习使用.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navList = document.getElementById('nav-list');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
